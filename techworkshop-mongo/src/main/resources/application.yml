@@ -1,0 +1,40 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: techworkshop-mongo
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: development
+
+allergen:
+  locale: de_DE
+
+---
+
+# Spring
+
+spring:
+  profiles: development
+  main:
+    allow-bean-definition-overriding: true
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: techworkshop-mongo-develop
+
+---
+
+# Spring
+
+spring:
+  profiles: test
+  main:
+    allow-bean-definition-overriding: true
+  data:
+    mongodb:
+      port: 27017
+      database: techworkshop-mongo-test
