@@ -1,6 +1,8 @@
 package de.techworkshop.mongo.document;
 
 import de.techworkshop.mongo.core.AbstractDocument;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,6 +13,7 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+@ApiModel(description = "Zeigt die Werte eines Mitarbeiters.")
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "Mitarbeiter")
@@ -25,6 +28,7 @@ public class MitarbeiterDocument extends AbstractDocument<ObjectId> {
   @Getter
   @Setter
   @Indexed
+  @ApiModelProperty(notes = "Eindeutige ID.")
   private UUID uuid;
 
   /**
@@ -33,6 +37,7 @@ public class MitarbeiterDocument extends AbstractDocument<ObjectId> {
   @Setter
   @Getter
   @NonNull
+  @ApiModelProperty(notes = "Vorname")
   private String firstName;
 
   /**
@@ -41,5 +46,6 @@ public class MitarbeiterDocument extends AbstractDocument<ObjectId> {
   @Setter
   @Getter
   @NonNull
+  @ApiModelProperty(notes = "Nachname")
   private String lastName;
 }
