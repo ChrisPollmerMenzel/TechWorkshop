@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- *
+ * Repository für {@link MitarbeiterDocument}.
  */
 @Repository
 public interface MitarbeiterRepository extends MongoRepository<MitarbeiterDocument, ObjectId> {
