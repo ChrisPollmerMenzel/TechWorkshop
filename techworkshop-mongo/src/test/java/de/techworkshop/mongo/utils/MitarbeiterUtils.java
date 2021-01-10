@@ -17,8 +17,9 @@ public class MitarbeiterUtils {
 
     String firstName = "Tim";
     String lastName = "Hoffmann";
+    String userName = "TimH";
 
-    return new MitarbeiterDocument(uuid, firstName, lastName);
+    return new MitarbeiterDocument(uuid, firstName, lastName, userName);
   }
 
 }

@@ -48,4 +48,9 @@ public class MitarbeiterServiceImpl extends AbstractMongoRepositoryServiceImpl<M
   public List<MitarbeiterDocument> findAllByFirstName(String firstName) {
     return this.getMongoRepository().findAllByFirstName(firstName);
   }
+
+  @Override
+  public MitarbeiterDocument findByUserName(String userName) {
+    return this.getMongoRepository().findByUserName(userName);
+  }
 }

@@ -79,4 +79,24 @@ class MitarbeiterServiceImplTest {
     assertEquals(mitarbeiterDocument.getFirstName(), resultList.get(0).getFirstName());
     assertEquals(mitarbeiterDocument.getLastName(), resultList.get(0).getLastName());
   }
+
+  @Test
+  void testFindByUserName() {
+
+    final UUID uuid = UUID.randomUUID();
+
+    MitarbeiterDocument mitarbeiterDocument = MitarbeiterUtils.createMitarbeiterDocument(uuid);
+
+    Mockito.when(this.mitarbeiterRepository.findByUserName(mitarbeiterDocument.getUserName()))
+        .thenReturn(mitarbeiterDocument);
+
+    MitarbeiterDocument result = this.mitarbeiterService
+        .findByUserName(mitarbeiterDocument.getUserName());
+
+    assertNotNull(result);
+    assertEquals(uuid, result.getUuid());
+    assertEquals(mitarbeiterDocument.getFirstName(), result.getFirstName());
+    assertEquals(mitarbeiterDocument.getLastName(), result.getLastName());
+    assertEquals(mitarbeiterDocument.getUserName(), result.getUserName());
+  }
 }

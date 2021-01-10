@@ -15,4 +15,6 @@ public interface MitarbeiterRepository extends MongoRepository<MitarbeiterDocume
   List<MitarbeiterDocument> findAll();
 
   List<MitarbeiterDocument> findAllByFirstName(String firstName);
+
+  MitarbeiterDocument findByUserName(String userName);
 }

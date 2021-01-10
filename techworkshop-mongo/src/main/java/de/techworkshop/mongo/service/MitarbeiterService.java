@@ -32,4 +32,12 @@ public interface MitarbeiterService extends MongoRepositoryService<MitarbeiterDo
    * @return {@link List} von {@link MitarbeiterDocument}
    */
   List<MitarbeiterDocument> findAllByFirstName(String firstName);
+
+  /**
+   * Suche nach Datensatz mit dem Benutzernamen.
+   *
+   * @param userName Benutzernamen
+   * @return {@link MitarbeiterDocument}
+   */
+  MitarbeiterDocument findByUserName(String userName);
 }

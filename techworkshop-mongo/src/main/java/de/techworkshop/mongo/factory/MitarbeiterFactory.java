@@ -23,7 +23,7 @@ public class MitarbeiterFactory {
 
     if (Objects.nonNull(mitarbeiterDocument)) {
       mitarbeiter = new MitarbeiterDocument(UUID.randomUUID(), mitarbeiterDocument.getFirstName(),
-          mitarbeiterDocument.getLastName());
+          mitarbeiterDocument.getLastName(), mitarbeiterDocument.getUserName());
     }
 
     return mitarbeiter;

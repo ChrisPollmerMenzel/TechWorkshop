@@ -88,7 +88,7 @@ class MitarbeiterRepositoryTest extends
 
     final UUID uuid = UUID.randomUUID();
 
-    MitarbeiterDocument mitarbeiterDocument = new MitarbeiterDocument(uuid, "Tom", "H");
+    MitarbeiterDocument mitarbeiterDocument = new MitarbeiterDocument(uuid, "Tom", "H", "tomH");
 
     this.repository.save(mitarbeiterDocument);
 
@@ -114,5 +114,21 @@ class MitarbeiterRepositoryTest extends
     assertEquals(3, resultList.size());
     assertEquals(mitarbeiterDocument.getFirstName(), resultList.get(0).getFirstName());
     assertEquals(mitarbeiterDocument.getLastName(), resultList.get(0).getLastName());
+  }
+
+  @Test
+  void testFindByUserName() {
+
+    MitarbeiterDocument mitarbeiterDocument = new MitarbeiterDocument(UUID.randomUUID(), "Tom", "H", "tomH");
+
+    this.repository.save(mitarbeiterDocument);
+
+    MitarbeiterDocument result = this.repository
+        .findByUserName(mitarbeiterDocument.getUserName());
+
+    assertNotNull(result);
+    assertEquals(mitarbeiterDocument.getFirstName(), result.getFirstName());
+    assertEquals(mitarbeiterDocument.getLastName(), result.getLastName());
+    assertEquals(mitarbeiterDocument.getUserName(), result.getUserName());
   }
 }

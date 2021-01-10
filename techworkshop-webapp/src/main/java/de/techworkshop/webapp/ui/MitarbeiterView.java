@@ -15,6 +15,7 @@ public class MitarbeiterView extends VerticalLayout {
 
   private final TextField firstName = new TextField("Vorname");
   private final TextField lastName = new TextField("Nachname");
+  private final TextField userName = new TextField("Benutzername");
   private final Button saveButton = new Button("Speichern");
 
   @Autowired
@@ -26,6 +27,7 @@ public class MitarbeiterView extends VerticalLayout {
       MitarbeiterDocument mitarbeiter = new MitarbeiterDocument();
       mitarbeiter.setFirstName(firstName.getValue());
       mitarbeiter.setLastName(lastName.getValue());
+      mitarbeiter.setUserName(userName.getValue());
 
       mitarbeiterService.save(mitarbeiter);
     });

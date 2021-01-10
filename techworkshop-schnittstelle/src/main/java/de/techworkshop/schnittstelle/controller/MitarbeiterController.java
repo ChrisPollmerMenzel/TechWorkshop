@@ -4,12 +4,15 @@ import de.techworkshop.mongo.document.MitarbeiterDocument;
 import de.techworkshop.mongo.service.MitarbeiterService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,12 +34,25 @@ public class MitarbeiterController {
   /**
    * Holen aller Mitarbeiter.
    *
-   * @return {@link MitarbeiterDocument}
+   * @return {@link List} von {@link MitarbeiterDocument}
    */
   @ApiOperation("Gibt die Daten aller Mitarbeiter zurück.")
   @GetMapping(value = "/all")
   public List<MitarbeiterDocument> findAllMitarbeiter() {
 
     return mitarbeiterService.findAll();
+  }
+
+  /**
+   * Holen eines Mitarbeiters für einen bestimmten Benutzernamen.
+   *
+   * @return {@link MitarbeiterDocument}
+   */
+  @ApiOperation("Holen eines Mitarbeiters für einen bestimmten Benutzernamen.")
+  @GetMapping(value = "/all/{userName}")
+  public MitarbeiterDocument findMitarbeiterByUserName(
+      @ApiParam(value = "Benutzername") @PathVariable(value = "userName") String userName) {
+
+    return mitarbeiterService.findByUserName(userName);
   }
 }
