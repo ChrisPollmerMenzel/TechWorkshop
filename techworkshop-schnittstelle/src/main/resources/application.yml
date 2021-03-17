@@ -23,8 +23,8 @@ spring:
     allow-bean-definition-overriding: true
   data:
     mongodb:
-      port: 27017
       database: techworkshop-schnittstelle
+      uri: mongodb+srv://MongoUser:mongotest@cluster0.i0lyi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
 ---
 
@@ -36,5 +36,5 @@ spring:
     allow-bean-definition-overriding: true
   data:
     mongodb:
-      port: 27017
       database: techworkshop-schnittstelle-test
+      uri: mongodb+srv://MongoUser:mongotest@cluster0.i0lyi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
