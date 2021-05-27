@@ -6,6 +6,14 @@ können.
 Bauen der Module:
     mvn clean install 
 
+Das Projekt basiert auf der neuesten Java 11 Version. Dies wird benötigt um die Verbindung zur 
+Mognodb Cloud Atlas herzustellen. 
+
+Download:
+https://adoptopenjdk.net/
+
+Außerdem muss die IP-Adresse in der Cloud hinterlegt werden.
+
 ### techworkshop-mongo
 
 Dieses Modul dient für die Verbindung mit einer Mongo Datenbank. Da die Services von diesem Modul in
