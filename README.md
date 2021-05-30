@@ -14,6 +14,11 @@ https://adoptopenjdk.net/
 
 Außerdem muss die IP-Adresse in der Cloud hinterlegt werden.
 
+Starten des Moduls:
+
+    - in den target-Ordner navigieren
+    - ausführen mit: java -jar ~SNAPSHOT-EXE.jar
+
 ### techworkshop-mongo
 
 Dieses Modul dient für die Verbindung mit einer Mongo Datenbank. Da die Services von diesem Modul in
@@ -25,9 +30,9 @@ Der Service läuft unter: localhost:8082
 
 Dieses Modul liefert eine REST-Api für das Projekt.
 
-Der Service läuft unter: localhost:8081
+Der Service läuft unter: localhost:8085
 
-Swagger-Oberfläche: localhost:8081/swagger-ui.html
+Swagger-Oberfläche: localhost:8085/swagger-ui.html
 
 In der Swagger-Oberfläche werden die Rest-Endpunkte angezeigt und können getestet werden.
 
