@@ -52,9 +52,5 @@ public class MitarbeiterDocument extends AbstractDocument<ObjectId> {
   /**
    * Benutzername.
    */
-  @Setter
-  @Getter
-  @NonNull
-  @ApiModelProperty(notes = "Benutzername")
-  private String userName;
+  //ToDo: String userName
 }

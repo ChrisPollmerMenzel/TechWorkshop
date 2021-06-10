@@ -56,6 +56,7 @@ public class MitarbeiterController {
   public MitarbeiterDocument findMitarbeiterByUserName(
       @ApiParam(value = "Benutzername") @PathVariable(value = "userName") String userName) {
 
-    return mitarbeiterService.findByUserName(userName);
+    //ToDo: richtigen Methodenaufruf
+    return null;
   }
 }

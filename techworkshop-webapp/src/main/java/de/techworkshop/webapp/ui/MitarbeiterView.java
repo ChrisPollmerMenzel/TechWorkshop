@@ -27,7 +27,7 @@ public class MitarbeiterView extends VerticalLayout {
       MitarbeiterDocument mitarbeiter = new MitarbeiterDocument();
       mitarbeiter.setFirstName(firstName.getValue());
       mitarbeiter.setLastName(lastName.getValue());
-      mitarbeiter.setUserName(userName.getValue());
+      // ToDo: neues Feld befüllen
 
       mitarbeiterService.save(mitarbeiter);
     });
