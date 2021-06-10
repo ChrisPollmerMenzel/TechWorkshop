@@ -32,6 +32,6 @@ public class MitarbeiterView extends VerticalLayout {
       mitarbeiterService.save(mitarbeiter);
     });
 
-    add(firstName, lastName, saveButton);
+    add(firstName, lastName, userName, saveButton);
   }
 }

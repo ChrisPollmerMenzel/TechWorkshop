@@ -23,7 +23,7 @@ spring:
     allow-bean-definition-overriding: true
   data:
     mongodb:
-      database: techworkshop-webapp
+      database: techworkshop
       uri: mongodb+srv://MongoUser:mongotest@cluster0.i0lyi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
 ---

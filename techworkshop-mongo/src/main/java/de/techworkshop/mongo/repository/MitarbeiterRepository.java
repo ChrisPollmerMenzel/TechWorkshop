@@ -12,8 +12,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MitarbeiterRepository extends MongoRepository<MitarbeiterDocument, ObjectId> {
 
-  List<MitarbeiterDocument> findAll();
-
   List<MitarbeiterDocument> findAllByFirstName(String firstName);
 
   MitarbeiterDocument findByUserName(String userName);

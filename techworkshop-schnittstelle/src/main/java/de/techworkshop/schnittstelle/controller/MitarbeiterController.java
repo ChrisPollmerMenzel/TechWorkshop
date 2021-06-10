@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Controller für Mitarbeiter values.
  */
+@Slf4j
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(value = "/mitarbeiter", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -38,6 +40,9 @@ public class MitarbeiterController {
   @GetMapping(value = "/all")
   public List<MitarbeiterDocument> findAllMitarbeiter() {
 
+    log.info("find all");
+    log.info("Service {}", mitarbeiterService);
+    log.info("Service result size {}", mitarbeiterService.findAll().size());
     return mitarbeiterService.findAll();
   }
 
