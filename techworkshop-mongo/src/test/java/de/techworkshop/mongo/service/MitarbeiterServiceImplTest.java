@@ -87,6 +87,17 @@ class MitarbeiterServiceImplTest {
 
     MitarbeiterDocument mitarbeiterDocument = MitarbeiterUtils.createMitarbeiterDocument(uuid);
 
-    //ToDo: Testcase wie in den oberen Beispielen
+    Mockito.when(this.mitarbeiterRepository.findByUserName(mitarbeiterDocument.getUserName()))
+            .thenReturn(mitarbeiterDocument);
+
+    List<MitarbeiterDocument> resultList = this.mitarbeiterService
+            .findAllByFirstName(mitarbeiterDocument.getFirstName());
+
+    assertNotNull(resultList);
+    assertEquals(1, resultList.size());
+    assertEquals(uuid, resultList.get(0).getUuid());
+    assertEquals(mitarbeiterDocument.getFirstName(), resultList.get(0).getFirstName());
+    assertEquals(mitarbeiterDocument.getLastName(), resultList.get(0).getLastName());
+    assertEquals(mitarbeiterDocument.getUserName(), resultList.get(0).getUserName());
   }
 }
